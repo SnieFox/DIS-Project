@@ -40,6 +40,6 @@ public class ShopController : Controller
         if (!purchase.IsSuccess)
             return BadRequest(purchase.Message);
 
-        return Ok($"Pending confirmation. {purchase.Message}");
+        return Ok(new PurchaseDataResponse {OrderId = purchase.OrderId});
     }
 }

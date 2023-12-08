@@ -1,4 +1,6 @@
-﻿using DISProject.Database.DatabaseContext;
+﻿using System.Text.Json;
+using DISProject.Database.DatabaseContext;
+using DISProject.Database.DTO;
 using DISProject.Database.Entities;
 using DISProject.Database.Services.KafkaServices;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +17,7 @@ public class PurchaseService : IPurchaseService
         _context = context;
         _kafkaProducer = kafkaProducer;
     }
-    public async Task<(bool IsSuccess, string Message)> ExecutePurchaseAsync(int id, int quantity)
+    public async Task<(bool IsSuccess, string Message, int OrderId)> ExecutePurchaseAsync(int id, int quantity)
     {
         var purchase = new Purchase
         {
@@ -27,13 +29,13 @@ public class PurchaseService : IPurchaseService
         await _context.Purchases.AddAsync(purchase);
         var added = await _context.SaveChangesAsync();
         if (added == 0)
-            return (false, "Something went wrong when adding Purchase to queue");
+            return (false, "Something went wrong when adding Purchase to queue", 0);
 
-        int purchaseId = await _context.Purchases
+        int orderId = await _context.Purchases
             .OrderByDescending(p => p.Id)
             .Select(p => p.Id)
             .FirstOrDefaultAsync();
-        return (true, $"Order Id: {purchaseId}");
+        return (true, string.Empty, orderId);
     }
     
     // Processing of the purchase queue
@@ -51,12 +53,24 @@ public class PurchaseService : IPurchaseService
             {
                 await ProcessPurchase(pendingPurchase.ProductId, pendingPurchase.Quantity);
                 await SetPurchaseStatus(pendingPurchase, "Completed");
-                await _kafkaProducer.ProduceAsync("demo", $"The order is accepted. Id: {pendingPurchase.Id}");
+
+                string kafkaMessage = JsonSerializer.Serialize(new KafkaObjectResponse
+                {
+                    Id = pendingPurchase.Id,
+                    Message = "The order is accepted."
+                });
+                await _kafkaProducer.ProduceAsync("demo", kafkaMessage);
             }
             else
             {
                 await SetPurchaseStatus(pendingPurchase, "Failed");
-                await _kafkaProducer.ProduceAsync("demo", availability.Message + $". Id: {pendingPurchase.Id}");
+                
+                string kafkaMessage = JsonSerializer.Serialize(new KafkaObjectResponse
+                {
+                    Id = pendingPurchase.Id,
+                    Message = $"{availability.Message}."
+                });
+                await _kafkaProducer.ProduceAsync("demo", kafkaMessage);
             }
         }
     }
