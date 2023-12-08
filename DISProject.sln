@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DISProject.Api", "DISProject.Api\DISProject.Api.csproj", "{0CCF6BFC-7213-449F-B1B3-803DE309E228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DISProject.Database", "DISProject.Database\DISProject.Database.csproj", "{168E809F-1C55-46B1-8203-5C431F0E5E3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CCF6BFC-7213-449F-B1B3-803DE309E228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCF6BFC-7213-449F-B1B3-803DE309E228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCF6BFC-7213-449F-B1B3-803DE309E228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCF6BFC-7213-449F-B1B3-803DE309E228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168E809F-1C55-46B1-8203-5C431F0E5E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168E809F-1C55-46B1-8203-5C431F0E5E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168E809F-1C55-46B1-8203-5C431F0E5E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168E809F-1C55-46B1-8203-5C431F0E5E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

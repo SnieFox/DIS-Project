@@ -1,0 +1,15 @@
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\bin\Debug\net7.0\DISProject.Database.deps.json
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\bin\Debug\net7.0\DISProject.Database.dll
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\bin\Debug\net7.0\DISProject.Database.pdb
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.csproj.AssemblyReference.cache
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.AssemblyInfoInputs.cache
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.AssemblyInfo.cs
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.csproj.CoreCompileInputs.cache
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.dll
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\refint\DISProject.Database.dll
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.pdb
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\ref\DISProject.Database.dll
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\bin\Debug\net7.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Roflokektikpukpek\Desktop\.net learn\DISProject\DISProject.Database\obj\Debug\net7.0\DISProject.Database.csproj.CopyComplete
