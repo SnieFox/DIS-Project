@@ -14,6 +14,7 @@ public class PeopleService : IPeopleService
         try
         {
             var people = await _context.People
+                .OrderBy(p => p.Id)
                 .ToListAsync();
             if (people.Count == 0)
                 return (false, "People List was empty", new List<People>());

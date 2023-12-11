@@ -1,7 +1,6 @@
 using System.Text;
 using DISProject.Api.Services;
 using DISProject.Database.Extensions;
-using DISProject.Database.Services;
 using DISProject.Database.Services.KafkaServices;
 using DISProject.Database.Services.PurchaseServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -45,8 +44,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
-
-    // Добавьте конфигурацию для Swagger с использованием JWT
+    
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "JWT Authentication",
@@ -78,7 +76,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+app.UseCors(b => b
+    .WithOrigins("http://localhost:4200")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+);
 
 app.UseHttpsRedirection();
 

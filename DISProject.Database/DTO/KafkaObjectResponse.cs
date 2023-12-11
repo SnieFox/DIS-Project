@@ -2,6 +2,10 @@
 
 public class KafkaObjectResponse
 {
-    public int Id { get; set; }
-    public string Message { get; set; }
+    public string orderId { get; set; }
+    public int productId { get; set; }
+    public string productName { get; set; }
+    public int quantity { get; set; }
+    public string message { get; set; }
+    public string status { get; set; }
 }

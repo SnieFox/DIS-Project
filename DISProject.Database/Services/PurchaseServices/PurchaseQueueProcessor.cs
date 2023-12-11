@@ -29,7 +29,7 @@ public class PurchaseQueueProcessor : BackgroundService
             }
 
             // Delay execution for a certain time interval
-            await Task.Delay(TimeSpan.FromSeconds(5), stoppingToken);
+            await Task.Delay(TimeSpan.FromSeconds(3), stoppingToken);
         }
     }
 }

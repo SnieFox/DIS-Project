@@ -21,7 +21,8 @@ public class ShopController : Controller
 
     [HttpGet]
     [Route("products")]
-    [Authorize]
+    //[Authorize]
+    [ResponseCache(Duration = 5)]
     public async Task<IActionResult> GetAllProducts()
     {
         var allPeople = await _peopleService.GetAllPeopleAsync();
@@ -33,7 +34,7 @@ public class ShopController : Controller
     
     [HttpPost]
     [Route("purchase")]
-    [Authorize]
+    //[Authorize]
     public async Task<IActionResult> PurchaseProduct(PurchaseDataRequest purchaseData)
     {
         var purchase = await _purchaseService.ExecutePurchaseAsync(purchaseData.Id, purchaseData.Quantity);
